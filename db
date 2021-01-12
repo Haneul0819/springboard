@@ -1,0 +1,29 @@
+create table tbl_board(
+  bno int not null auto_increment,
+  title varchar(50) not null,
+  content text not null,
+  writer varchar(30) not null,
+  regDate timestamp not null default now(),
+  viewCnt int default 0,
+  primary key(bno));
+tbl_board
+게시글 번호 (primary key)
+게시글 제목
+게시글 내용
+작성자
+날짜
+조회수
+--------------------------------------------------
+create table comment(
+  cno int not null auto_increment primary key,
+  bno int not null,    
+  content text not null,   
+  writer varchar(20) not null, 
+  reg_date datetime not null);
+comment
+댓글 번호
+게시글 번호
+댓글 내용
+댓글 작성자
+작성 날짜
+-------------------------------------------------
